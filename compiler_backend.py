@@ -279,10 +279,10 @@ class HTTPHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
         return self.resp(403, { "exceptionText": "GET method is not allowed", "errorCode": "method_not_allowed" })            
 
     def originCheck(self):
-        origin = self.headers.getheader('origin') or "<null>"
-        if origin != "https://ide.onelang.io" and origin != "http://ide.onelang.io" and not origin.startswith("http://127.0.0.1:") and not origin.startswith("http://localhost:"):
-            self.resp(403, { "exceptionText": "Origin is not allowed: " + origin, "errorCode": "origin_not_allowed" })
-            return False
+        #origin = self.headers.getheader('origin') or "<null>"
+        #if origin != "https://ide.onelang.io" and origin != "http://ide.onelang.io" and not origin.startswith("http://127.0.0.1:") and not origin.startswith("http://localhost:"):
+        #    self.resp(403, { "exceptionText": "Origin is not allowed: " + origin, "errorCode": "origin_not_allowed" })
+        #    return False
         return True
 
     def do_OPTIONS(self):

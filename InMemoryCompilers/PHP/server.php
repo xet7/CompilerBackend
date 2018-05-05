@@ -8,10 +8,10 @@ function resp($result) {
     exit;
 }
 
-$origin = isset($_SERVER["HTTP_ORIGIN"]) ? $_SERVER["HTTP_ORIGIN"] : "<null>";
-if ($origin !== "https://ide.onelang.io" && strpos($origin, "http://127.0.0.1:") !== 0) {
-    resp(array("exceptionText" => "Origin is not allowed: " . $origin, "errorCode" => "origin_not_allowed"));
-}
+// $origin = isset($_SERVER["HTTP_ORIGIN"]) ? $_SERVER["HTTP_ORIGIN"] : "<null>";
+// if ($origin !== "https://ide.onelang.io" && strpos($origin, "http://127.0.0.1:") !== 0) {
+//    resp(array("exceptionText" => "Origin is not allowed: " . $origin, "errorCode" => "origin_not_allowed"));
+// }
 
 function exception_error_handler($errno, $errstr, $errfile, $errline) {
     throw new ErrorException($errstr, $errno, 0, $errfile, $errline);

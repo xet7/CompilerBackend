@@ -40,9 +40,9 @@ class HTTPHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         try:
             origin = self.headers.getheader('origin') or "<null>"
-            if origin != "https://ide.onelang.io" and not origin.startswith("http://127.0.0.1:"):
-                self.resp(403, { "exceptionText": "Origin is not allowed: " + origin, "errorCode": "origin_not_allowed" })
-                return
+            #if origin != "https://ide.onelang.io" and not origin.startswith("http://127.0.0.1:"):
+            #    self.resp(403, { "exceptionText": "Origin is not allowed: " + origin, "errorCode": "origin_not_allowed" })
+            #    return
 
             if self.path == '/compile':
                 fn = None
